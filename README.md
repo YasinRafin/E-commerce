@@ -62,7 +62,7 @@ A Flask-based e-commerce backend system with user authentication, product manage
 ## API Endpoints Checking:
 
 1. Authentication:
-   - Registration: `http://127.0.0.1:5000/auth/register`
+   - Registration(POST): `http://127.0.0.1:5000/auth/register`
      ```
         {
             "email":
@@ -70,7 +70,7 @@ A Flask-based e-commerce backend system with user authentication, product manage
             "password":
         }
      ```
-   - Login: `http://127.0.0.1:5000/auth/login`
+   - Login(POST): `http://127.0.0.1:5000/auth/login`
      ```
        {
           "email":
@@ -78,16 +78,16 @@ A Flask-based e-commerce backend system with user authentication, product manage
        }
      ```
      Will generate an access token
-   - Logout: `http://127.0.0.1:5000/auth/logout`
+   - Logout(POST): `http://127.0.0.1:5000/auth/logout`
      ```
      Must provide access token from login in Authorization -> Bearer Token
      ```
 2. Cart:
-   - Get all cart items: `http://127.0.0.1:5000/cart`
+   - Get all cart items(GET): `http://127.0.0.1:5000/cart`
      ```
      Must provide access token from login in Authorization -> Bearer Token
      ```
-   - Post cart item: `http://127.0.0.1:5000/cart`
+   - Post cart item(POST): `http://127.0.0.1:5000/cart`
      ```
      Must provide access token from login in Authorization -> Bearer Token
      {
@@ -95,16 +95,94 @@ A Flask-based e-commerce backend system with user authentication, product manage
         "quantity":
      }
      ```
-   - Update cart item(PUT): `http://127.0.0.1:5000/cart/cart_item_id`
+   - Update cart item(PUT): `http://127.0.0.1:5000/cart/<int:cart_item_id>`
      ```
      Must provide access token from login in Authorization -> Bearer Token
       {
-          "quantity": 11
+          "quantity":
       }
      ```
-   - Delete cart item(DELETE): `http://127.0.0.1:5000/cart/cart_item_id`
+   - Delete cart item(DELETE): `http://127.0.0.1:5000/cart/<int:cart_item_id>`
      ```
      Must provide access token from login in Authorization -> Bearer Token
      
      ```
-     
+3. Products:
+   - Add products(POST): `http://127.0.0.1:5000/products`
+     ```
+     Must provide access token from login in Authorization -> Bearer Token
+     {
+          "name":
+          "description":
+          "price":
+          "stock":
+          "category_id":
+      }
+     ```
+   - Get all product details(GET): `http://127.0.0.1:5000/products`
+     ```
+     Must provide access token from login in Authorization -> Bearer Token
+     ```
+
+   - Update any Product details(PUT):  `http://127.0.0.1:5000/products/<int:product_id>`
+     ```
+     Must provide access token from login in Authorization -> Bearer Token
+         {
+          "name":
+          "description":
+          "price":
+      
+        }
+    ```
+  - Delete any product(DELETE): `http://127.0.0.1:5000/products/<int:product_id>`
+    ```
+    Must provide access token from login in Authorization -> Bearer Token
+    
+    ```
+4. Category:
+   - Create category(POST):`http://127.0.0.1:5000/categories`
+     ```
+     Must provide access token from login in Authorization -> Bearer Token
+        {
+            "name":
+        }
+     ```
+   - Get all categories(GET): `http://127.0.0.1:5000/categories`
+     ```
+     Must provide access token from login in Authorization -> Bearer Token
+     ```
+   - Get category by id(GET): `http://127.0.0.1:5000/categories/<int:category_id>`
+     ```
+     Must provide access token from login in Authorization -> Bearer Token
+     ```
+   - Update a category(PUT): `http://127.0.0.1:5000/categories/<int:cateogory_id>`
+     ```
+     Must provide access token from login in Authorization -> Bearer Token
+         {
+            "name":"Pajamas"
+         }
+     ```
+   - Delete a category(DELETE): `http://127.0.0.1:5000/categories/<int:category_id>`
+     ```
+     Must provide access token from login in Authorization -> Bearer Token
+     ```
+5. Order:
+   - Create a order(POST): `http://127.0.0.1:5000/orders`
+     ```
+     Must provide access token from login in Authorization -> Bearer Token
+        {
+            "shipping_address":"6/D, road-23, house-39/40"
+        }
+     ```
+   - Get all orders(GET): `http://127.0.0.1:5000/orders`
+     ```
+     Must provide access token from login in Authorization -> Bearer Token
+     ```
+   - Get order by id(GET): `http://127.0.0.1:5000/orders/<int:order_id>`
+     ```
+     Must provide access token from login in Authorization -> Bearer Token
+     ```
+   - Cancel a order(POST): `http://127.0.0.1:5000/orders/<int:order_id>/cancel`
+     ```
+     Must provide access token from login in Authorization -> Bearer Token
+     ```
