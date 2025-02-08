@@ -82,4 +82,29 @@ A Flask-based e-commerce backend system with user authentication, product manage
      ```
      Must provide access token from login in Authorization -> Bearer Token
      ```
+2. Cart:
+   - Get all cart items: `http://127.0.0.1:5000/cart`
+     ```
+     Must provide access token from login in Authorization -> Bearer Token
+     ```
+   - Post cart item: `http://127.0.0.1:5000/cart`
+     ```
+     Must provide access token from login in Authorization -> Bearer Token
+     {
+        "product_id":,
+        "quantity":
+     }
+     ```
+   - Update cart item(PUT): `http://127.0.0.1:5000/cart/cart_item_id`
+     ```
+     Must provide access token from login in Authorization -> Bearer Token
+      {
+          "quantity": 11
+      }
+     ```
+   - Delete cart item(DELETE): `http://127.0.0.1:5000/cart/cart_item_id`
+     ```
+     Must provide access token from login in Authorization -> Bearer Token
+     
+     ```
      
