@@ -59,3 +59,27 @@ A Flask-based e-commerce backend system with user authentication, product manage
    ```bash
    flask run
    ```
+## API Endpoints Checking:
+
+1. Authentication:
+   - Registration: `http://127.0.0.1:5000/auth/register`
+     ```
+        {
+            "email":
+            "name":
+            "password":
+        }
+     ```
+   - Login: `http://127.0.0.1:5000/auth/login`
+     ```
+       {
+          "email":
+          "password":
+       }
+     ```
+     Will generate an access token
+   - Logout: `http://127.0.0.1:5000/auth/logout`
+     ```
+     Must provide access token from login in Authorization -> Bearer Token
+     ```
+     
