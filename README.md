@@ -159,7 +159,7 @@ A Flask-based e-commerce backend system with user authentication, product manage
      ```
      Must provide access token from login in Authorization -> Bearer Token
          {
-            "name":"Pajamas"
+            "name":
          }
      ```
    - Delete a category(DELETE): `http://127.0.0.1:5000/categories/<int:category_id>`
@@ -171,7 +171,7 @@ A Flask-based e-commerce backend system with user authentication, product manage
      ```
      Must provide access token from login in Authorization -> Bearer Token
         {
-            "shipping_address":"6/D, road-23, house-39/40"
+            "shipping_address":
         }
      ```
    - Get all orders(GET): `http://127.0.0.1:5000/orders`
