@@ -24,8 +24,8 @@ A Flask-based e-commerce backend system with user authentication, product manage
 ## Setup Instructions
 1. Clone the repository
    ```
-   git clone git@github.com:YasinRafin/Registration_API.git
-   cd Registration_API
+   git clone git@github.com:YasinRafin/E-commerce.git
+   cd E-commerce
    code .
    ``` 
 
