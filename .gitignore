@@ -1,0 +1,23 @@
+# Virtual environment
+env/
+
+# Byte-compiled files
+__pycache__/
+*.pyc
+*.pyo
+
+# Instance folder (contains sensitive data)
+instance/
+
+# Sensitive files
+migrations
+token.json
+.env
+
+# Docker files
+*.log
+*.pid
+
+# Editor/IDE settings
+.vscode/
+.idea/
